@@ -41,21 +41,22 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import '~@/styles/value.styl'
   .group
     padding: 0 10px
     margin-top: 20px
     text-align: left
     .title
       line-height: 40px
-      font-size: 16px
+      font-size: $font-size-small
       font-weight: 700
       color: #333
     .children--item
       line-height: 30px
-      font-size: 14px
+      font-size: $font-size-min
       font-weight: 400
       color: #444
       cursor: pointer
       &:hover,&.active
-        color: #1cc28b
+        color: $theme-color
 </style>

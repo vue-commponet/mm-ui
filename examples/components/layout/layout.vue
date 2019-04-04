@@ -71,14 +71,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import '~@/styles/mixins.styl'
+  @import '~@/styles/value.styl'
   .layout
     display: flex
     flex-direction: column
+    my-flex(column, flex-start, flex-start)
     height: 100%
     .layout--top
-      display: flex
-      justify-content: space-between
-      align-items: center
+      my-flex()
+      width: 100%
       height: 60px
       padding: 0 20px
       border-bottom: 1px solid #eee
@@ -86,8 +88,8 @@ export default {
         height: 30px
         vertical-align: middle
       .layout--top__name
-        margin-left: 14px
-        font-size: 24px
+        margin-left: $font-size-min
+        font-size: $font-size-big
         font-weight: 600
     .layout--main
       display: flex
