@@ -1,12 +1,12 @@
 <template>
-  <div>
-    12312
-  </div>
+  <button class="mm-button">
+
+  </button>
 </template>
 
 <script type="application/javascript">
 export default {
-  name: 'newButton',
+  name: 'mmButton',
   props: {},
   data () {
     return {}
@@ -19,7 +19,3 @@ export default {
   components: {}
 }
 </script>
-
-<style lang="less" scoped>
-
-</style>

@@ -1,4 +1,5 @@
 import button from './button'
+import './theme-styles/index.styl'
 
 const components = [
   button
