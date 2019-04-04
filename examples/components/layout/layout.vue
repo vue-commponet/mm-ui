@@ -1,11 +1,19 @@
 <template>
   <div class="layout">
-    <div class="layout--left">
-      <img src="../../assets/logo.png" class="layout--left__logo">
-      <listGroup :groupData="list" class="layout--left__group"></listGroup>
+    <div class="layout--top">
+      <router-link to="/home">
+        <img src="../../assets/logo.png" class="layout--top__logo">
+        <span class="layout--top__name">MM-UI</span>
+      </router-link>
     </div>
-    <div class="layout--right">
-      <router-view/>
+    <div class="layout--main">
+      <div class="layout--left">
+        <img src="../../assets/logo.png" class="layout--left__logo">
+        <listGroup :groupData="list" class="layout--left__group"></listGroup>
+      </div>
+      <div class="layout--right">
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
@@ -65,16 +73,34 @@ export default {
 <style lang="stylus" scoped>
   .layout
     display: flex
-    width: 1200px
+    flex-direction: column
     height: 100%
-    margin: 0 auto
-    /*background: #ccc*/
-    .layout--left
-      width: 200px
-      border-right: 1px solid #ccc
-      .layout--left__logo
-        margin: 20px 0
-    .layout--right
+    .layout--top
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 60px
+      padding: 0 20px
+      border-bottom: 1px solid #eee
+      .layout--top__logo
+        height: 30px
+        vertical-align: middle
+      .layout--top__name
+        margin-left: 14px
+        font-size: 24px
+        font-weight: 600
+    .layout--main
+      display: flex
       flex: 1
-      padding: 20px
+      width: 1200px
+      margin: 0 auto
+      /*background: #ccc*/
+      .layout--left
+        width: 200px
+        border-right: 1px solid #eee
+        .layout--left__logo
+          margin: 20px 0
+      .layout--right
+        flex: 1
+        padding: 20px
 </style>
