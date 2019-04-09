@@ -3,6 +3,12 @@
     <h1>MM-UI,周氏前端组件</h1>
     <div class="home--btn">
       <router-link to="/docs"><div class="home--btn__start">开始使用</div></router-link>
+      <mm-button
+        type="primary"
+        icon="iconfont iconiphone"
+        loadingIcon="iconfont iconiphone"
+        loading
+        >123</mm-button>
       <div class="home--btn__github">github</div>
     </div>
   </div>

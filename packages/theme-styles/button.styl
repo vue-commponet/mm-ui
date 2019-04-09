@@ -1,2 +1,50 @@
+@import './common/var.styl'
+bColor(bgColor,borderColor,fontColor)
+  background: bgColor
+  border-color: borderColor
+  color: fontColor
+bHoverColor(bgColor,borderColor,fontColor)
+  background: bgColor
+  border-color: borderColor
+  color: fontColor
+bSize(padding,font-size)
+  padding: padding
+  font-size: font-size
+
+@keyframes loading
+  0%
+    transform: rotate3d(0,0,1,0)
+  100%
+    transform: rotate3d(0,0,1,360deg)
+
+
+
 .mm-button
-  width: 100px
+  display: inline-block
+  border-width: 1px
+  border-style: solid
+  border-radius: 4px
+  text-align: center
+  line-height: 1
+  cursor: pointer
+  &.mm-button--size__default
+    bSize($button-default-padding,$default-font-size)
+  &.mm-button--type__default
+    bColor($white-color,$default-lighten-color,$default-color)
+    &:hover,&.is-loading
+      bHoverColor($primary-lighten9-color,$primary-lighten1-color,$primary-lighten1-color)
+  &.mm-button--type__primary
+    bColor($primary-color,$primary-color,$white-color)
+    &:hover,&.is-loading
+      bHoverColor($primary-lighten1-color,$primary-lighten1-color,$white-color)
+  &.is-round
+    border-radius: 20px
+  &.is-circle
+    padding: 12px
+    border-radius: 50%
+  .is-icon + .mm-button--text,.is-loading + .mm-button--text
+    margin-left: 5px
+  .is-loading
+    display: inline-block
+    transform-origin: center center
+    animation: loading 5s linear infinite
